@@ -37,20 +37,18 @@ class matre(object):
                 if ((a != 2) or (b != 2)):
                     if (self.tmatr[a][b] == self.tmatr[a+3][b]):
                         return False
-            #column check
-        for a in self.tmatr:
-            if sum(a) != 15:
-                return False
+        #column check
+        if ((sum(self.tmatr[1]) != 15) or (sum(self.tmatr[4]) != 15)):
+            return False
             #row check
+        ltot = 0
+        rtot = 0
         for a in range(3):
-            ltot = 0
-            rtot = 0
-            for b in range(3):
-                ltot += self.tmatr[b][a]
-                rtot += self.tmatr[b+3][a]
-            if ((ltot != 15) or (rtot != 15)):
-                return False
-            #diagonal down
+            ltot += self.tmatr[b][1]
+            rtot += self.tmatr[b+3][1]
+        if ((ltot != 15) or (rtot != 15)):
+            return False
+          #diagonal down
         ltot = 0
         rtot = 0    
         for a in range(3):

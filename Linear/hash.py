@@ -3,6 +3,7 @@ def linhash(number):
     digits = []
     if (number == 0):
         digits.append(0)
+        number -= 1
     while(number >= 0):
         digits.append(number%18)
         if (number == 0):
