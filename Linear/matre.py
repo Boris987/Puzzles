@@ -8,7 +8,10 @@ class matre(object):
         #Directly called methods
     def mcopy(self):
         #simple copy returner
-        newmat = matre(self.tmatr[:])
+        newmatrix = []
+        for a in self.tmatr:
+            newmatrix.append(a[:])
+        newmat = matre(newmatrix)
         return newmat
     def colshift(self, dire, col):
         #dire stands for direction and should be a character, col is an int from 0-2
